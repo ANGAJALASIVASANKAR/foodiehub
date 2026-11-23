@@ -1,0 +1,41 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:foodiehub-test;MODE=MySQL;DB_CLOSE_DELAY=-1;DATABASE_TO_LOWER=TRUE
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    open-in-view: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+  flyway:
+    enabled: false
+  mail:
+    host: localhost
+    port: 25
+    username:
+    password:
+
+foodiehub:
+  jwt:
+    secret: test-secret-key-that-is-long-enough-for-hmac-sha256-abcdef
+  razorpay:
+    key-id:
+    key-secret:
+  delivery:
+    base-delivery-charge: 40
+    free-delivery-threshold: 499
+    tax-rate-percent: 5
+
+management:
+  health:
+    mail:
+      enabled: false
+
+logging:
+  level:
+    com.foodiehub: WARN
+    org.hibernate: ERROR
